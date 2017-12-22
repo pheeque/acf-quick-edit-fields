@@ -112,7 +112,7 @@ abstract class Field {
 			$field_class = explode( '_', $acf_field['type'] );
 			$field_class = array_map( 'ucfirst', $field_class );
 			$field_class = 'ACFQuickEdit\\Fields\\' . implode( '', $field_class ) . 'Field';
-			//*
+			/*
 			if ( class_exists( $field_class, true ) ) {
 				self::$fields[ $acf_field['key'] ] = new $field_class( $acf_field );
 			} else {
