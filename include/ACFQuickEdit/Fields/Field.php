@@ -107,15 +107,24 @@ abstract class Field {
 		if ( ! $acf_field || is_null($acf_field) ) {
 			return;
 		}
+
 		if ( ! isset( self::$fields[ $acf_field['key'] ] ) ) {
 			$field_class = explode( '_', $acf_field['type'] );
 			$field_class = array_map( 'ucfirst', $field_class );
 			$field_class = 'ACFQuickEdit\\Fields\\' . implode( '', $field_class ) . 'Field';
-			if ( class_exists( $field_class ) ) {
+			//*
+			if ( class_exists( $field_class, true ) ) {
 				self::$fields[ $acf_field['key'] ] = new $field_class( $acf_field );
 			} else {
 				self::$fields[ $acf_field['key'] ] = new Generic( $acf_field );
 			}
+			/*/
+			try {
+				self::$fields[ $acf_field['key'] ] = new $field_class( $acf_field );
+			} catch( Exception $err ) {
+				self::$fields[ $acf_field['key'] ] = new Generic( $acf_field );
+			}
+			//*/
 		}
 
 		return self::$fields[ $acf_field['key'] ];
