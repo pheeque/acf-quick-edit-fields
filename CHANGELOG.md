@@ -1,6 +1,34 @@
 ACF QuickEdit Fields
 ====================
 
+3.0.5
+-----
+ - Feature: Support Post Object Bulk and Quick Edit (thanks to [@m0n0mind](https://github.com/m0n0mind))
+ - Fix: Column for Post object with multiple values not displaying
+ - Fix: ACF Field Location rules applied incorrectly
+ - Fix: JS Error with link fields
+
+3.0.4
+-----
+ - Fix: Quick/Bulk Edit not showing when list table filter is used
+
+3.0.3
+-----
+ - Fix: JS error
+
+3.0.2
+-----
+ - Fix: Broken 3rd party field integration
+
+3.0.1
+-----
+ - Fix: Some Fields not saved
+ - Fix: Checkbox not displayed properly
+ - Fix: file/image field without value not displayed properly in editor
+ - Fix: JS Error in post editor
+ - Fix: Bulk edit overriding values
+ - User List: reduce pageload
+
 2.4.11
 -----
  - Fix ACF deprecation warning

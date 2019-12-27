@@ -6,8 +6,10 @@
 *.swp
 *.out
 *.psd
+!src/wporg/*.psd
 .svn/
 .svnignore
 .sass-cache
 node_modules/
 /vendor/
+tmp/

@@ -1,0 +1,24 @@
+@mixin column-type( $types, $cell:'td' ) {
+	$selector: '';
+	@each $type in $types {
+		@if $selector == '' {
+			$selector: '#{$cell}[class*="--qef-type-#{$type}--"]';
+		} @else {
+			$selector: '#{$selector},#{$cell}[class*="--qef-type-#{$type}--"]';
+		}
+	}
+	#{$selector} {
+	 	@content;
+	}
+}
+
+@mixin transparency( $size:20px, $c1:$wp-gray-dark, $c2:$wp-gray-lighter ) {
+
+  background-color: $c1;
+  background-size: $size $size;
+  background-position: 0 0, $size / 2 $size / 2;
+  background-image: linear-gradient(45deg, $c2 25%, transparent 25%, transparent 75%, $c2 75%, $c2),
+                    linear-gradient(45deg, $c2 25%, transparent 25%, transparent 75%, $c2 75%, $c2);
+
+
+}
